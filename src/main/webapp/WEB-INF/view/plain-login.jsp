@@ -21,9 +21,13 @@
         <div class="col-sm-3 col-md-3 col-lg-4"></div>
         <div class="col-sm-6 col-md-6 col-lg-4" >
             <h1 class="text-center header">请登录</h1>
-            <form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="post">
+            <form action="${pageContext.request.contextPath}/authenticateTheUser" method="post">
                 <c:if test="${param.error !=null}">
                     <p style="color: red">Invalid username or password!</p>
+                </c:if>
+
+                <c:if test="${param.logout != null}">
+                    <p style="color: brown">You have logged out!</p>
                 </c:if>
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -34,7 +38,8 @@
                     <input type="password" name="password" id="password" class="form-control"/>
                 </div>
                 <button type="submit" class="btn btn-primary" value="Login">Submit</button>
-            </form:form>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            </form>
         </div>
         <div class="col-sm-3 col-md-3 col-lg-4"></div>
     </div>
