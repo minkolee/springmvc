@@ -21,7 +21,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 
         //添加用户，使用内存验证
         auth.inMemoryAuthentication()
-                .withUser(users.username("jenny").password("test123").roles("ADMIN"))
+                .withUser(users.username("jenny").password("test123").roles("ADMIN", "MANAGER"))
                 .withUser(users.username("minko").password("test123").roles("MANAGER"))
                 .withUser(users.username("cony").password("test123").roles("EMPLOYEE"));
     }
