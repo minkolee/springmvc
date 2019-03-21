@@ -17,5 +17,13 @@
     <button type="submit">Logout</button>
 </form:form>
 
+
+<security:authorize access="hasRole('MANAGER')">
+<p><a href="${pageContext.request.contextPath}/leader">Managers only</a></p>
+</security:authorize>
+
+<security:authorize access="hasRole('ADMIN')">
+<p><a href="${pageContext.request.contextPath}/system">System only</a></p>
+</security:authorize>
 </body>
 </html>

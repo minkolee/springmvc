@@ -10,4 +10,19 @@ public class HomepageController {
     public String Homepage() {
         return "home";
     }
+
+    @RequestMapping("/leader")
+    public String showManagerpage() {
+        return "manager";
+    }
+
+    @RequestMapping("/system")
+    public String showAdminPage() {
+        return "system";
+    }
+
+    @RequestMapping("/access-denied/")
+    public String accessDenied() {
+        return "denied";
+    }
 }

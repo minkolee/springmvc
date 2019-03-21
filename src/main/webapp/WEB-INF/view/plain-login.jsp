@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <style>
-        header {
+        .banner {
             margin-top: 40px;
             margin-bottom: 40px;
         }
@@ -20,8 +20,8 @@
     <div class="row">
         <div class="col-sm-3 col-md-3 col-lg-4"></div>
         <div class="col-sm-6 col-md-6 col-lg-4" >
-            <h1 class="text-center header">请登录</h1>
-            <form action="${pageContext.request.contextPath}/authenticateTheUser" method="post">
+            <h1 class="text-center banner">请登录</h1>
+            <form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="post">
                 <c:if test="${param.error !=null}">
                     <p style="color: red">Invalid username or password!</p>
                 </c:if>
@@ -38,8 +38,7 @@
                     <input type="password" name="password" id="password" class="form-control"/>
                 </div>
                 <button type="submit" class="btn btn-primary" value="Login">Submit</button>
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-            </form>
+            </form:form>
         </div>
         <div class="col-sm-3 col-md-3 col-lg-4"></div>
     </div>
