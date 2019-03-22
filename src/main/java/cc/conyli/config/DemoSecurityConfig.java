@@ -21,7 +21,9 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
         User.UserBuilder users = User.withDefaultPasswordEncoder();
 
         //使用数据连接池作为验证来源
-        auth.jdbcAuthentication().dataSource(securityDataSource);
+        auth.jdbcAuthentication().dataSource(securityDataSource)
+                .usersByUsernameQuery("SELECT user_id, pw, active from members where user_id=?")
+                .authoritiesByUsernameQuery("SELECT user_id, role from roles where user_id=?");
 
         //添加用户，使用内存验证
 //        auth.inMemoryAuthentication()
