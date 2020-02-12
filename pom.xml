@@ -13,9 +13,9 @@
     <url>http://www.conyli.cc</url>
 
     <properties>
-        <springframework.version>5.0.2.RELEASE</springframework.version>
-        <springsecurity.version>5.0.0.RELEASE</springsecurity.version>
-        <hibernate.version>5.2.16.Final</hibernate.version>
+        <springframework.version>5.1.5.RELEASE</springframework.version>
+        <springsecurity.version>5.1.4.RELEASE</springsecurity.version>
+        <hibernate.version>5.4.1.Final</hibernate.version>
 
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
