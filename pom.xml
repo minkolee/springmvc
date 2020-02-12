@@ -9,12 +9,12 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>securitydemo Maven Webapp</name>
+    <name>spring mvc blog</name>
     <url>http://www.conyli.cc</url>
 
     <properties>
         <springframework.version>5.1.5.RELEASE</springframework.version>
-        <springsecurity.version>5.1.4.RELEASE</springsecurity.version>
+<!--        <springsecurity.version>5.1.4.RELEASE</springsecurity.version>-->
         <hibernate.version>5.4.1.Final</hibernate.version>
 
 
@@ -77,25 +77,25 @@
         </dependency>
 
         <!--Spring Security-->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${springsecurity.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.security</groupId>-->
+<!--            <artifactId>spring-security-web</artifactId>-->
+<!--            <version>${springsecurity.version}</version>-->
+<!--        </dependency>-->
 
-        <!--Spring Security-->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${springsecurity.version}</version>
-        </dependency>
+<!--        &lt;!&ndash;Spring Security&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.security</groupId>-->
+<!--            <artifactId>spring-security-config</artifactId>-->
+<!--            <version>${springsecurity.version}</version>-->
+<!--        </dependency>-->
 
-        <!--Spring Security JSP Tag Library-->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-taglibs</artifactId>
-            <version>${springsecurity.version}</version>
-        </dependency>
+<!--        &lt;!&ndash;Spring Security JSP Tag Library&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.security</groupId>-->
+<!--            <artifactId>spring-security-taglibs</artifactId>-->
+<!--            <version>${springsecurity.version}</version>-->
+<!--        </dependency>-->
 
         <!--servlet-->
         <dependency>
@@ -119,10 +119,11 @@
         </dependency>
 
         <!--Database-->
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.47</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.10</version>
         </dependency>
 
         <!--C3PO-->
