@@ -17,9 +17,8 @@ public class WebConfig extends WebMvcConfigurationSupport {
     @Bean
     @Override
     public ViewResolver mvcViewResolver() {
-        System.out.println("执行了解析器");
         InternalResourceViewResolver resourceViewResolver = new InternalResourceViewResolver();
-        resourceViewResolver.setPrefix("WEB-INF/views/");
+        resourceViewResolver.setPrefix("/WEB-INF/views/");
         resourceViewResolver.setSuffix(".jsp");
         resourceViewResolver.setExposeContextBeansAsAttributes(true);
         return resourceViewResolver;
