@@ -1,5 +1,7 @@
 package cc.conyli.web;
 
+import cc.conyli.entity.Address;
+import cc.conyli.entity.User;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpEntity;
@@ -7,28 +9,31 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
-@Controller
-@RequestMapping("/body")
+@RestController
 public class BodyController {
 
-    //入参转换成字符串
-    @RequestMapping("/inner")
-    public ResponseEntity<String> inBound(HttpEntity<String> httpEntity) {
 
-        System.out.println(httpEntity.getHeaders());
-        System.out.println(httpEntity.getBody());
-
-        return new ResponseEntity<>("index", HttpStatus.OK);
+    @RequestMapping("/user")
+    public User getUser() {
+        User user = new User();
+        Address address = new Address();
+        address.setDetail("zhr");
+        user.setAddress(address);
+        user.setAge(6);
+        user.setUserName("cony");
+        return user;
     }
 
-
-    @RequestMapping("/byteimage")
-    public ResponseEntity<byte[]> image() throws IOException {
-        Resource file = new FileSystemResource("C:\\Users\\Minko\\Pictures\\mhwi2.jpg");
-        return new ResponseEntity<>(FileCopyUtils.copyToByteArray(file.getInputStream()), HttpStatus.OK);
+    @RequestMapping("/acceptuser")
+    public String getUser(@RequestBody User user) {
+        System.out.println("接受到的JSON转换成的是: " + user);
+        return "index";
     }
 }
