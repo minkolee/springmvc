@@ -20,6 +20,12 @@ public class BasicController {
         return "index";
     }
 
+    @ModelAttribute("modelUser")
+    public User getUser() {
+        User user = new User();
+        user.setAge(10);
+        return user;
+    }
 
     @RequestMapping("/image")
     public void image(OutputStream outputStream) throws IOException {
@@ -36,11 +42,8 @@ public class BasicController {
 
 
     @RequestMapping("/usercreate")
-    public ModelAndView createUser(@RequestBody User user) {
+    public String createUser(@ModelAttribute("modelUser") User user) {
         System.out.println(user);
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        modelAndView.addObject("user", user);
-        return modelAndView;
+        return "index";
     }
 }

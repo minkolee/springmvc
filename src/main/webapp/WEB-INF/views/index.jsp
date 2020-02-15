@@ -12,5 +12,15 @@
     <p>用户信息: ${user}</p>
 </c:if>
 
+<c:if test="${test!=null}">
+    <p>测试模型信息: ${test}</p>
+</c:if>
+
+<c:if test="${modelUser!=null}">
+    <p>测试模型信息: ${modelUser}</p>
+</c:if>
+
+<p>当前时间是: ${time}</p>
+
 </body>
 </html>
