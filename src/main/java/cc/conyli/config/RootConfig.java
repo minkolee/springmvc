@@ -6,6 +6,5 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
-@ComponentScan("cc.conyli.config")
 public class RootConfig {
 }

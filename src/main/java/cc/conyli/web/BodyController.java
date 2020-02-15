@@ -32,7 +32,7 @@ public class BodyController {
     }
 
     @RequestMapping("/acceptuser")
-    public String getUser(@RequestBody User user) {
+    public String getUser(@RequestBody(required = false) User user) {
         System.out.println("接受到的JSON转换成的是: " + user);
         return "index";
     }
