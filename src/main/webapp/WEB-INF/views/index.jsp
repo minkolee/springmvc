@@ -8,19 +8,8 @@
 </head>
 <body>
 <h1>主页</h1>
-<c:if test="${user!=null}">
-    <p>用户信息: ${user}</p>
-</c:if>
+<p>当前登录的用户是${user}</p>
 
-<c:if test="${test!=null}">
-    <p>测试模型信息: ${test}</p>
-</c:if>
-
-<c:if test="${modelUser!=null}">
-    <p>测试模型信息: ${modelUser}</p>
-</c:if>
-
-<p>当前时间是: ${time}</p>
 
 </body>
 </html>

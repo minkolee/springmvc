@@ -10,40 +10,22 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.Map;
 
 @Controller
+@SessionAttributes("user")
 public class BasicController {
 
-    @RequestMapping("/")
-    public String home() {
-        System.out.println("控制器方法生效");
+    @RequestMapping("/test")
+    public String home(@ModelAttribute("user") User user) {
         return "index";
     }
 
-    @ModelAttribute("modelUser")
-    public User getUser() {
-        User user = new User();
-        user.setAge(10);
-        return user;
-    }
+//    @ModelAttribute("modelUser")
+//    public User getUser() {
+//        User user = new User();
+//        user.setAge(10);
+//        return user;
+//    }
 
-    @RequestMapping("/image")
-    public void image(OutputStream outputStream) throws IOException {
-        Resource file = new FileSystemResource("C:\\Users\\Minko\\Pictures\\mhwi.jpg");
-        FileCopyUtils.copy(file.getInputStream(), outputStream);
-    }
-
-    @ResponseBody
-    @RequestMapping("/byteimage")
-    public byte[] image(HttpServletResponse response) throws IOException {
-        Resource file = new FileSystemResource("C:\\Users\\Minko\\Pictures\\mhwi2.jpg");
-        return FileCopyUtils.copyToByteArray(file.getInputStream());
-    }
-
-
-    @RequestMapping("/usercreate")
-    public String createUser(@ModelAttribute("modelUser") User user) {
-        System.out.println(user);
-        return "index";
-    }
 }
