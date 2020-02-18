@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 import java.util.Map;
 
-@Controller
+//@Controller
 @RequestMapping("/mhwi")
 public class MHWI {
 

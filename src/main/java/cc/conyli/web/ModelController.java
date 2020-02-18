@@ -9,7 +9,7 @@ import java.net.BindException;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-@Controller
+//@Controller
 @RequestMapping("/model")
 public class ModelController {
 

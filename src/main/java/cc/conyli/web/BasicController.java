@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Map;
 
-@Controller
+//@Controller
 @SessionAttributes("user")
 public class BasicController {
 

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+//@Controller
 @RequestMapping("/user")
 @SessionAttributes("user")
 public class LoginController {
